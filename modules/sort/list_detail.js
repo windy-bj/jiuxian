@@ -23,27 +23,30 @@ angular.module('list_detailModules', ['me-lazyload'])
             };
       }])
       .controller('List1Ctrl', ["$scope", 'GetInfoxy', function($scope, GetInfoxy) {
-            GetInfoxy.getData1().success(function(res){
-            	$scope.arr1 = res.goodsCate.list;
-            	 
+            GetInfoxy.getData1().success(function(res) {
+                  $scope.arr1 = res.goodsCate.list;
+
             })
-            GetInfoxy.getData2().success(function(res){
-            	$scope.arr2 = res.goodsCate.list;
-            	 
+            GetInfoxy.getData2().success(function(res) {
+                  $scope.arr2 = res.goodsCate.list;
+
             })
-            GetInfoxy.getData3().success(function(res){
-            	$scope.arr3 = res.goodsCate.list;
-            	 
+            GetInfoxy.getData3().success(function(res) {
+                  $scope.arr3 = res.goodsCate.list;
+
             })
-            GetInfoxy.getData4().success(function(res){
-            	$scope.arr4 = res.goodsCate.list;
-            	
+            GetInfoxy.getData4().success(function(res) {
+                  $scope.arr4 = res.goodsCate.list;
+
             })
-           $scope.click_xx = function() {
-                        localStorage.setItem('shopObj', JSON.stringify(this.i))
-                  }
+            $scope.click_xx = function() {
+                  localStorage.setItem('shopObj', JSON.stringify(this.i))
+            }
+            $scope.show = false;
+            $scope.click_choose = function() {
+                  $scope.show1 = !$scope.show1;
+            }
       }])
-
-
-
-
+      $('body').animate({
+            scrollTop: 1
+      }, 300);
